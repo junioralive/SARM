@@ -6,6 +6,10 @@
 
 This project aims to address key privacy and security challenges by ensuring no decrypted copies of files are stored after access, making it ideal for users handling highly sensitive data. All encryption and decryption processes occur in **real-time**, preserving data confidentiality while providing secure and transparent access.
 
+## Preview
+
+![image](https://github.com/user-attachments/assets/5175cc1d-74b6-407a-b677-3f7b77ee927a)
+
 ## Features
 
 - **Real-time Encryption & Decryption**: Encrypt files and folders upon storage, decrypt them in real-time when accessed, without leaving decrypted copies behind.
