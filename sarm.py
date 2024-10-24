@@ -21,7 +21,7 @@ temp_dir = tempfile.mkdtemp()  # Create a unique temporary directory for this se
 # Function to run the batch script with admin privileges
 def run_batch_script(action):
     # Get the absolute path to the batch file in the current folder (same as the .exe)
-    script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "toggle_alive.bat")
+    script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sarm.bat")
 
     if not os.path.exists(script_path):
         print(f"Error: {script_path} not found!")
