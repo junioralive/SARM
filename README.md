@@ -1,8 +1,14 @@
 # SARM
 
+![sarm_bn](https://github.com/user-attachments/assets/36ced79f-93ef-447d-ad86-24e62c0720ea)
+
+
+> [!Note]
+> This project is under development and currently works only on Windows. Please feel free to contribute and provide suggestions. I will make it live soon. Until then, try out the scripts and enjoy!
+> 
 ## Project Overview
 
-**SARM** is a robust encryption and partition management tool designed to provide real-time protection for sensitive files stored on external drives. The application focuses on **AES-GCM encryption** to ensure files remain secure, with real-time decryption allowing seamless access. It allows users to **hide** and **unhide** a specific drive partition ("Alive") to further protect confidential data. Currently available for **Windows**, SARM is in its **beta phase**, with plans to evolve into a **cross-platform** solution and introduce web-based access.
+**SARM** ( Secure Access and Real-time Management ) is a robust encryption and partition management tool designed to provide real-time protection for sensitive files stored on external drives. The application focuses on **AES-GCM encryption** to ensure files remain secure, with real-time decryption allowing seamless access. It allows users to **hide** and **unhide** a specific drive partition ("Alive") to further protect confidential data. Currently available for **Windows**, SARM is in its **beta phase**, with plans to evolve into a **cross-platform** solution and introduce web-based access.
 
 This project aims to address key privacy and security challenges by ensuring no decrypted copies of files are stored after access, making it ideal for users handling highly sensitive data. All encryption and decryption processes occur in **real-time**, preserving data confidentiality while providing secure and transparent access.
 
