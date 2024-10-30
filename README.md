@@ -43,59 +43,12 @@ With features like file encryption and comprehensive drive support, SARM serves 
 
 ### Installation
 
-1. **Clone the Repository**:
-   Open a command prompt and run the following command to clone the repository:
+Open a command prompt and run the following commands
    ```bash
    git clone https://github.com/junioralive/SARM.git
-   ```
-
-2. **Navigate to the Directory**:
-   Change to the directory where the repository is cloned:
-   ```bash
    cd SARM
-   ```
-
-3. **Install Required Packages**:
-   Ensure you have `requirements.txt` in your repository. Run the following command to install the required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run the Application**:
-   Execute the application using the following command:
-   ```bash
    python sarm_app.py
    ```
-
-### Admin Permissions
-
-- **Admin Permissions Required**: Admin access is necessary for:
-  - **Hiding and Unhiding Volumes**: This involves modifying system settings that require elevated privileges.
-  - **Clearing Temporary Files**: Ensuring all temporary files, including system-level files, are securely deleted.
-
-### Encrypting Files/Folders
-
-1. **Drag and Drop**: Simply drag and drop files or folders into the SARM window to encrypt them.
-2. **Single File/Folder Encryption**: Select a specific file or folder, then click **"Encrypt"** to initiate encryption. Encrypted files will be saved to the designated storage location.
-3. **Multi-Select Encryption**: Enable the **multi-select option** to select multiple files or folders. Click **"Encrypt"** to encrypt all selected items at once.
-
-Here's the updated decryption section with the details about the temporary folder option:
-
-### Decrypting Files/Folders
-
-1. **Single File/Folder Decryption**: Select a specific encrypted file or folder, then click **"Decrypt"** for real-time decryption, ensuring no decrypted files remain on disk. SARM will automatically remove the decrypted file after access.
-
-2. **Multi-Select Decryption**: Enable the **multi-select option** to select multiple encrypted files or folders, then click **"Decrypt"** to decrypt all selected items at once.
-
-3. **Temporary Folder Option**:
-   - If the **Temp Folder checkbox** is ticked, files will be decrypted to a temporary folder.
-   - If unticked, files will be decrypted to their original path when clicking the decrypt path button.
-
-### Additional Options
-
-- **Multi-Select File Support**: Enable or disable multi-file selection for encryption/decryption using the checkbox.
-- **Temp Folder**: Choose whether to decrypt files to a temporary folder or their original path (Temp by default).
-- **Safe Mode**: Enable to delete all temporary files for maximum security.
 
 ## Planned Features
 
