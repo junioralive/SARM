@@ -1,148 +1,117 @@
 # SARM
 
-![sarm_bn](https://github.com/user-attachments/assets/36ced79f-93ef-447d-ad86-24e62c0720ea)
+![sarm_bn](utils/media/sarm.jpeg)
 
-
-> [!Note]
-> This project is under development and currently works only on Windows. Please feel free to contribute and provide suggestions. I will make it live soon. Until then, try out the scripts and enjoy!
-> 
 ## Project Overview
 
-**SARM** ( Secure Access and Real-time Management ) is a robust encryption and partition management tool designed to provide real-time protection for sensitive files stored on external drives. The application focuses on **AES-GCM encryption** to ensure files remain secure, with real-time decryption allowing seamless access. It allows users to **hide** and **unhide** a specific drive partition ("Alive") to further protect confidential data. Currently available for **Windows**, SARM is in its **beta phase**, with plans to evolve into a **cross-platform** solution and introduce web-based access.
+**SARM** (Secure Access and Real-time Management) is a robust encryption and file management tool designed to provide real-time protection for sensitive files across all types of storage devices, including local drives, external hard drives, USBs, and more. It utilizes **AES-GCM encryption** to ensure the security of files, offering seamless real-time decryption for access without retaining decrypted copies. This tool is currently available for **Windows** in its **beta phase**, with plans to expand to a **cross-platform** solution in the future.
 
-This project aims to address key privacy and security challenges by ensuring no decrypted copies of files are stored after access, making it ideal for users handling highly sensitive data. All encryption and decryption processes occur in **real-time**, preserving data confidentiality while providing secure and transparent access.
+SARM addresses critical privacy and security needs by ensuring that decrypted files are not left stored on any drive after they are accessed, making it ideal for handling highly sensitive data. All encryption and decryption processes are performed **in real-time**, maintaining security while providing smooth, transparent access.
 
-## Preview
+## DEMO
 
-![image](https://github.com/user-attachments/assets/5175cc1d-74b6-407a-b677-3f7b77ee927a)
+Uploading Soon...
 
 ## Features
 
-- **Real-time Encryption & Decryption**: Encrypt files and folders upon storage, decrypt them in real-time when accessed, without leaving decrypted copies behind.
-- **Partition Hiding & Unhiding**: Protect the partition by hiding it when not in use, preventing unauthorized access.
-- **AES-GCM Encryption**: Uses advanced encryption standards for securing data and ensuring file integrity.
-- **Argon2 Key Derivation**: Ensures strong and secure password protection using Argon2i, a leading password-hashing algorithm.
-- **Drag-and-Drop File Encryption**: Easily encrypt files and entire folders with preserved structure through a simple drag-and-drop interface.
-- **Minimalistic Dark-Themed UI**: Features a clean, modern interface with hidden logs, enabling a focused user experience.
-- **Temporary File Cleanup**: Automatically removes all temporary files, ensuring no data traces are left behind.
-- **Cross-Platform Support** (Planned): While currently limited to Windows, SARM is designed with future cross-platform compatibility (macOS, Linux) in mind.
-- **Samba Server Integration** (Planned): A one-click solution to deploy a Samba server that will allow secure web-based access to your encrypted drive.
+- **Real-time Encryption & Decryption**: Encrypts files and folders upon storage, with instant decryption when accessed, ensuring no decrypted copies remain.
+- **AES-GCM Encryption**: Provides advanced encryption standards to secure data and ensure file integrity.
+- **Argon2 Key Derivation**: Utilizes Argon2i for strong password protection.
+- **Drag-and-Drop File Encryption**: Enables quick encryption of files and folders, preserving their original structure.
+- **Minimalistic Dark-Themed UI**: Clean interface with hidden logs for a focused user experience.
+- **Temporary File Cleanup**: Automatically removes all temporary files, ensuring no trace of decrypted data remains.
+- **Multi-Select File Support**: Option to enable or disable multi-file selection for encryption/decryption.
+- **Custom Decryption Path**: Choose to decrypt files to a temporary folder or their original path using a checkbox.
+- **Safe Mode**: A feature that ensures all temporary files are securely deleted from the computer.
+- **Full System Encryption Support**: Supports encryption and decryption of both local and external drives.
 
 ## Why SARM?
 
-In a digital world where data breaches are increasingly common, secure data storage has become more crucial than ever. Traditional encryption tools often fall short by leaving decrypted versions of files on disk, posing potential privacy risks. **SARM** was developed to address this issue with a clear focus on **real-time decryption** and **zero decrypted file storage**, ensuring that sensitive files are never left exposed, even temporarily.
+In an era of rampant data breaches, SARM ensures secure data management by preventing decrypted copies of files from being stored on any disk. It is designed to offer **real-time decryption** with **zero decrypted file storage**, ensuring sensitive files are never exposed.
 
-SARM provides a solution for users who need both **file encryption** and **partition security** with minimal intervention. Its ability to hide and unhide partitions, along with robust encryption, makes it a powerful tool for secure file management.
+With features like file encryption and comprehensive drive support, SARM serves users who require a robust, low-intervention solution for secure file management.
+
+Here’s the revised usage guide with the prerequisite corrected to include Python, and the note about the absence of an executable file:
+
+---
 
 ## Usage Guide
 
 ### Prerequisites
 
-- **Windows** OS
-- **Python 3.x** installed with all dependencies listed in the `requirements.txt` file
-- An **external drive** partitioned as "Alive" (details below)
+- **Operating System**: Windows
+- **Python**: Ensure Python is installed on your system. You can download it from the [official Python website](https://www.python.org/downloads/).
+- **Storage Devices**: Local or external
 
-### Installation Steps
+### Installation
 
-1. **Clone the repository**:
+1. **Clone the Repository**:
+   Open a command prompt and run the following command to clone the repository:
    ```bash
-   git clone https://github.com/your-repo/SARM.git
+   git clone https://github.com/junioralive/SARM.git
+   ```
+
+2. **Navigate to the Directory**:
+   Change to the directory where the repository is cloned:
+   ```bash
    cd SARM
    ```
 
-2. **Install dependencies**:
+3. **Install Required Packages**:
+   Ensure you have `requirements.txt` in your repository. Run the following command to install the required packages:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Run the application**:
+4. **Run the Application**:
+   Execute the application using the following command:
    ```bash
-   python sarm.py
+   python sarm_app.py
    ```
 
-### Creating the "Alive" Partition
+### Admin Permissions
 
-SARM operates on an external drive partition named **"Alive"**. Here’s how to set it up:
-
-1. **Create a new partition** using Windows Disk Management:
-   - Open Disk Management (search for it in the Start menu).
-   - Right-click on unallocated space, select "New Simple Volume", and follow the prompts.
-   - Format the partition as **exFAT** for future cross-platform compatibility.
-   - Assign a drive letter, preferably **P:**, to this partition.
-   - Rename the partition to **"Alive"**.
-
-Alternatively, you can use the following command line instructions:
-
-```bash
-diskpart
-select disk 1  # Select the external disk
-create partition primary
-format fs=exfat quick
-assign letter=P
-```
-
-### Hiding the Partition
-
-To hide the "Alive" partition (and its contents), use the batch script provided by SARM:
-
-```bash
-SARM> toggle_alive.bat hide
-```
-
-This will remove the drive letter from the partition, effectively hiding it from the operating system.
-
-### Unhiding the Partition
-
-To access the hidden partition and its encrypted contents, run:
-
-```bash
-SARM> toggle_alive.bat unhide
-```
-
-This will reassign the drive letter **P:** to the partition, making it accessible.
+- **Admin Permissions Required**: Admin access is necessary for:
+  - **Hiding and Unhiding Volumes**: This involves modifying system settings that require elevated privileges.
+  - **Clearing Temporary Files**: Ensuring all temporary files, including system-level files, are securely deleted.
 
 ### Encrypting Files/Folders
 
-1. **Drag and drop** the files or folders into the SARM window.
-2. Click **"Encrypt"** to start encrypting your files. The encrypted files will be saved to the "Alive" partition.
+1. **Drag and Drop**: Simply drag and drop files or folders into the SARM window to encrypt them.
+2. **Single File/Folder Encryption**: Select a specific file or folder, then click **"Encrypt"** to initiate encryption. Encrypted files will be saved to the designated storage location.
+3. **Multi-Select Encryption**: Enable the **multi-select option** to select multiple files or folders. Click **"Encrypt"** to encrypt all selected items at once.
 
-### Decrypting Files
+Here's the updated decryption section with the details about the temporary folder option:
 
-1. Select the encrypted file you want to access.
-2. Click **"Decrypt"**, and the file will be decrypted and opened in real-time, without leaving a decrypted copy on disk.
-3. Once you are done, the decrypted file will be automatically removed.
+### Decrypting Files/Folders
 
-### Cleaning Temporary Files
+1. **Single File/Folder Decryption**: Select a specific encrypted file or folder, then click **"Decrypt"** for real-time decryption, ensuring no decrypted files remain on disk. SARM will automatically remove the decrypted file after access.
 
-If needed, you can manually clear all temporary files by clicking the **"Clear Temp"** button in the application. This ensures that no decrypted data remains after use.
+2. **Multi-Select Decryption**: Enable the **multi-select option** to select multiple encrypted files or folders, then click **"Decrypt"** to decrypt all selected items at once.
+
+3. **Temporary Folder Option**:
+   - If the **Temp Folder checkbox** is ticked, files will be decrypted to a temporary folder.
+   - If unticked, files will be decrypted to their original path when clicking the decrypt path button.
+
+### Additional Options
+
+- **Multi-Select File Support**: Enable or disable multi-file selection for encryption/decryption using the checkbox.
+- **Temp Folder**: Choose whether to decrypt files to a temporary folder or their original path (Temp by default).
+- **Safe Mode**: Enable to delete all temporary files for maximum security.
 
 ## Planned Features
 
-SARM is still in its beta phase, and several features are planned for future versions:
-
-- **Cross-Platform Support**: Expanding to **Linux** and **macOS** to ensure full compatibility across different operating systems.
-- **Executable Version**: While this version does not include an executable for easier distribution (to keep the tool discreet), future versions will feature a user-friendly executable release.
-- **One-Click Samba Server**: A key future feature will be the ability to set up a **Samba server** with one click, allowing users to share the "Alive" partition over the web. All decryption will occur in real-time, ensuring the security of data during access.
-- **Enhanced UI & Features**: Continuing to refine the user interface and add more comprehensive feedback for users, such as detailed progress logs and status notifications.
-
-## Why SARM is Powerful
-
-SARM is built to address key challenges of secure file management in the modern era:
-
-1. **Real-Time Decryption**: No decrypted copies are ever stored on disk, drastically reducing the risk of unauthorized access.
-2. **Partition Hiding**: By hiding the entire partition, sensitive data is kept entirely out of view.
-3. **Robust Encryption Standards**: Utilizing AES-GCM and Argon2i for state-of-the-art encryption and password protection, SARM provides security that is resistant to brute force and tampering.
-4. **Future Web Integration**: Planned integration with Samba will make the "Alive" partition accessible online, with real-time decryption, ensuring data privacy even during remote access.
+- **Cross-Platform Support**: Expanding to **Linux** and **macOS**.
 
 ## How to Contribute
 
-Contributions to SARM are highly encouraged. To contribute:
+Contributions are welcome. To contribute:
 
 1. **Fork the repository**.
 2. **Create a new branch** for your feature.
-3. **Make your changes** and test thoroughly.
-4. **Submit a pull request** with a detailed description of your changes and why they should be merged.
+3. **Make your changes** and test them.
+4. **Submit a pull request** with a detailed description.
 
 ## License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.

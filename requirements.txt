@@ -2,3 +2,5 @@ tkinterdnd2==0.4.2
 cryptography==43.0.3
 argon2-cffi==23.1.0
 pywin32==306
+customtkinter==5.2.2
+wmi==1.5.1
