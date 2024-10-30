@@ -31,9 +31,7 @@ In an era of rampant data breaches, SARM ensures secure data management by preve
 
 With features like file encryption and comprehensive drive support, SARM serves users who require a robust, low-intervention solution for secure file management.
 
-Here’s the revised usage guide with the prerequisite corrected to include Python, and the note about the absence of an executable file:
-
----
+[![Image Preview](https://github.com/user-attachments/assets/6840fc61-0fbf-4573-9dbd-774a387543ba)](https://github.com/user-attachments/assets/6840fc61-0fbf-4573-9dbd-774a387543ba)
 
 ## Usage Guide
 
